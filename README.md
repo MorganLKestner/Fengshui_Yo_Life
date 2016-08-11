@@ -1,5 +1,7 @@
 #README 
-![](https://media.giphy.com/media/G9PeXm6jdY6MU/giphy.mp4)
+
+![](http://66.media.tumblr.com/tumblr_lyy9g5BN5W1r4ghkoo1_400.gif)
+
 ##Welcome to Fengshui Yo Life 
 Life is hard, Lets make it easy. 
 
