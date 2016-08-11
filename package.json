@@ -1,0 +1,30 @@
+{
+  "name": "fengshui_yo_life",
+  "version": "1.0.0",
+  "description": "Fengshui crud app",
+  "main": "app.js",
+  "scripts": {
+    "start": "nodemon app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MorganLKestner/Fengshui_Yo_Life.git"
+  },
+  "author": "Morgan Lee Kestner",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MorganLKestner/Fengshui_Yo_Life/issues"
+  },
+  "homepage": "https://github.com/MorganLKestner/Fengshui_Yo_Life#readme",
+  "dependencies": {
+    "bcrypt": "^0.8.7",
+    "body-parser": "^1.15.2",
+    "connect-flash": "^0.1.1",
+    "express": "^4.14.0",
+    "express-session": "^1.14.0",
+    "mustache-express": "^1.2.2",
+    "nodemon": "^1.10.0",
+    "pg-promise": "^5.2.7"
+  }
+}
