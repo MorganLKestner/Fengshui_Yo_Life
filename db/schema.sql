@@ -1,4 +1,6 @@
+DROP TABLE IF EXISTS results;
 DROP TABLE IF EXISTS users;
+
 
 CREATE TABLE users (
   id SERIAL PRIMARY KEY,
@@ -6,3 +8,11 @@ CREATE TABLE users (
   password_digest VARCHAR(255)
 );
 
+CREATE TABLE results (
+	id SERIAL PRIMARY KEY,
+	month INTEGER NOT NULL,
+	day INTEGER NOT NULL,
+	year INTEGER NOT NULL,
+	gender VARCHAR(255),
+	user_id INTEGER REFERENCES users(id)
+);
