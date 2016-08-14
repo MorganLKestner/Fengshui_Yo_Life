@@ -63,3 +63,14 @@ nav .brand-logo {
 .input-field .prefix.active {
      color: #000;
    }
+
+
+.fengshui-item {
+  color: #888;
+  text-align: center;
+}
+
+.fengshui-item i {
+    font-size: 4em !important;
+    color: #888 !important;
+  }

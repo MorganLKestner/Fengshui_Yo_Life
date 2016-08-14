@@ -23,96 +23,57 @@
         <form class="col s12 push-s1">
           <div class="row">
             <div class="input-field col ">
-              <select>
+              <select id="select-gender">
                 <option value="" disabled selected>Gender</option>
-                <option value="1">Female</option>
-                <option value="2">Male</option>
+                <option id="male" value="0">Male</option>
+                <option id="female" value="1">Female</option>
               </select>
               <label for"gender"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="day" id="day" type="text" class="validate">
+              <input id="day" class="validate">
               <label for="day"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="month" id="month" type="text" class="validate">
+              <input placeholder="month" id="month" value="month" class="validate">
               <label for="month"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="year" id="year" type="text" class="validate">
+              <input placeholder="year" id="year"  value="year" class="validate">
               <label for="year"></label>
             </div>
             <div class="input-field col ">
-              <button id="submit_btn"class="btn waves-effect col  indigo" type="submit" name="action">Submit
-              </button>
-            </div>
-            <div id="save_btn" class="input-field col ">
-              <button class="btn waves-effect col  indigo" type="submit" name="action">Save
+              <button id="submit_btn"class="btn waves-effect col  indigo" type="button" name="action">Submit
               </button>
             </div>
           </div>
         </form>
       </div> 
-      <div class="container cardresults">
-        <div class="row">
-        <div class="row rtwo">
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-           <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-           <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-           <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-          <div class="col s12 m4">
-            <div class="card-panel small indigo">
-              <span class="white-text">I am a very simple card. I am good at containing small bits of information.
-              </span>
-            </div>
-          </div>
-        </div> <!-- row -->
-        </div> <!-- row -->
-      </div> <!-- container -->
+      <div class="container fengshui-item">
+          <i class="fa fa-th" aria-hidden="true"></i>
+          <h3>My Lo Shu</h3>
+          <div id="loshu"></div>
+      </div>
+
+       <div class="container fengshui-item">
+          <i class="fa fa-th" aria-hidden="true"></i>
+          <h3>My Chinese Year Sign</h3>
+          <div id="year_sign"></div>
+          
+      </div>
+      <div class="container fengshui-item">
+          <i class="fa fa-th" aria-hidden="true"></i>
+          <h3>My Chinese Month Sign</h3>
+          <div id="month_sign"></div>
+          
+      </div>
+        <div class="container fengshui-item">
+          <i class="fa fa-th" aria-hidden="true"></i>
+          <h3>My Astrological allies</h3>
+          <div id="allies"></div>
+          
+      </div>
     </div> <!-- container -->
+    <link href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" rel="stylesheet">
   </body>
 </html>
