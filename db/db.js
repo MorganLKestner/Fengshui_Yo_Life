@@ -1,5 +1,5 @@
 const pgp = require('pg-promise')();
-const db = pgp('postgres://morgankestner@localhost:5432/auth');
+const db = pgp('postgres://morgankestner@localhost:5432/fengshui_db');
 
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);
@@ -58,5 +58,7 @@ var create_user = function(req, res, next){
     });
   });
 };
+
+
 
 module.exports = { login, logout, create_user };

@@ -12,6 +12,7 @@ router.post('/create', db.create_user, function (req, res) {
     req.flash('error', res.error);
     res.redirect('new');
   } else {
+  	//
     res.redirect('/');
   }
 });

@@ -23,14 +23,6 @@
         <form class="col s12 push-s1">
           <div class="row">
             <div class="input-field col ">
-              <select id="select-gender">
-                <option value="" disabled selected>Gender</option>
-                <option id="male" value="0">Male</option>
-                <option id="female" value="1">Female</option>
-              </select>
-              <label for"gender"></label>
-            </div>
-            <div class="input-field col ">
               <input id="day" class="validate">
               <label for="day"></label>
             </div>
@@ -48,32 +40,40 @@
             </div>
           </div>
         </form>
-      </div> 
-      <div class="container fengshui-item">
-          <i class="fa fa-th" aria-hidden="true"></i>
-          <h3>My Lo Shu</h3>
-          <div id="loshu"></div>
       </div>
-
-       <div class="container fengshui-item">
-          <i class="fa fa-th" aria-hidden="true"></i>
-          <h3>My Chinese Year Sign</h3>
-          <div id="year_sign"></div>
-          
-      </div>
-      <div class="container fengshui-item">
-          <i class="fa fa-th" aria-hidden="true"></i>
-          <h3>My Chinese Month Sign</h3>
-          <div id="month_sign"></div>
-          
-      </div>
-        <div class="container fengshui-item">
-          <i class="fa fa-th" aria-hidden="true"></i>
-          <h3>My Astrological allies</h3>
-          <div id="allies"></div>
-          
+      <div id="results" class="container">
+        <h1>Results<h1>
+        <form id='save_results' data-id="{{id}}">
+           <div class="row fengshui-item">
+              <h4>My Chinese Year Sign</h4>
+              <div id="year_wrapper">
+                <input name="year_sign" id="year_sign" value="{{year_sign}}">
+              </div>
+          </div>
+          <div class="row fengshui-item">
+              <h4>My Chinese Month Sign</h4>
+              <div id="month_wrapper">
+                <input name="month_sign" id="month_sign" value="{{month_sign}}">
+              </div>
+          </div>
+          <div class="row fengshui-item">
+            <h4>My Allies</h4>
+            <div id="friend_wrapper">
+              <input name="friend" id="friend" value="{{friend}}">
+            </div>
+          </div>
+            <div class="row fengshui-item">
+              <h4>My Peach Blossom Animal</h4>
+              <div id="peach_wrapper">
+                <input name="peach" id="peach" value="{{peach}}">
+              </div>
+          </div>
+          <button id="save_btn" type="submit">Save</button>
+        </form>
       </div>
     </div> <!-- container -->
     <link href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" rel="stylesheet">
   </body>
 </html>
+
+

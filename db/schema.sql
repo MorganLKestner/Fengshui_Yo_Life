@@ -8,11 +8,12 @@ CREATE TABLE users (
   password_digest VARCHAR(255)
 );
 
+
 CREATE TABLE results (
 	id SERIAL PRIMARY KEY,
-	month INTEGER NOT NULL,
-	day INTEGER NOT NULL,
-	year INTEGER NOT NULL,
-	gender VARCHAR(255),
+	friend VARCHAR(255),
+	year_sign VARCHAR(255),
+	month_sign VARCHAR(255),
+	peach VARCHAR(255),
 	user_id INTEGER REFERENCES users(id)
 );
