@@ -15,5 +15,5 @@ CREATE TABLE results (
 	year_sign VARCHAR(255),
 	month_sign VARCHAR(255),
 	peach VARCHAR(255),
-	user_id INTEGER REFERENCES users(id)
+	user_id VARCHAR(255) REFERENCES users(email)
 );

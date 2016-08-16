@@ -27,11 +27,11 @@
               <label for="day"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="month" id="month" value="month" class="validate">
+              <input placeholder="month" id="month-input" value="month" class="validate">
               <label for="month"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="year" id="year"  value="year" class="validate">
+              <input placeholder="year" id="year-input"  value="year" class="validate">
               <label for="year"></label>
             </div>
             <div class="input-field col ">
@@ -43,17 +43,18 @@
       </div>
       <div id="results" class="container">
         <h1>Results<h1>
-        <form id='save_results' data-id="{{id}}">
+        <form id='save_results'>
+          <div id='id_holder' data-id="{{email}}"></div>
            <div class="row fengshui-item">
               <h4>My Chinese Year Sign</h4>
               <div id="year_wrapper">
-                <input name="year_sign" id="year_sign" value="{{year_sign}}">
+                <input name="year_sign" id="year" value="{{year}}">
               </div>
           </div>
           <div class="row fengshui-item">
               <h4>My Chinese Month Sign</h4>
               <div id="month_wrapper">
-                <input name="month_sign" id="month_sign" value="{{month_sign}}">
+                <input name="month_sign" id="month" value="{{month}}">
               </div>
           </div>
           <div class="row fengshui-item">

@@ -9,8 +9,8 @@ $(document).ready(function() {
 		e.preventDefault();
 		// alert('submit');
 		var day = $('#day').val();
-		var year =  $('#year').val();
-		var month = $('#month').val();
+		var year =  $('#year-input').val();
+		var month = $('#month-input').val();
 		console.log('do we know day: ' + day+ " " + month + " "+ year)
 
 		apiService.getChineseSignYear(year, month, day);
@@ -21,26 +21,25 @@ $(document).ready(function() {
 
 	$('#save_results').on('submit',function(e){
 		e.preventDefault();
-		id = $(this).attr('data-id');
-    	year = $(this).children('#year_sign').val();
-    	month = $(this).children('#month_sign').val();
-	   	friend = $(this).children('#friend').val();
-	   	peach = $(this).children('#peach').val();
+    	year = $('#year').val();
+    	month = $('#month').val();
+	   	friend = $('#friend').val();
+	   	peach = $('#peach').val();
+	   	user_id = $('#id_holder').attr('data-id');
 	   	
-	   	result = {year:year,month:month,friend:friend,peach:peach}
+	   	result = {"year":year,"month":month,"friend":friend,"peach":peach, "user_id":user_id}
+	   	console.log(result);
 	    $.ajax({
 	      "url":"http://localhost:3000/results",
 	      "method":"POST",
 	      "data": result,
 	      "success": function(data){
 	        console.log('ajax save!!')
-
+	        console.log(data);
 	    	},
 	    	"error": function(err){
 			console.log('error in save');
 			console.log(err);
-			console.log(data);
-
 			}
 		})//ajax
 
@@ -76,8 +75,8 @@ var apiService = (function(){
 
 	function getChineseSignYear(year, month, day){
 			makeCall('findChineseSignOfMonth', day, month, year).then(function(res){
-			$('#year_sign').val(res.result);
-			console.log($('#year_sign').val(res.result));
+			$('#year').val(res.result);
+			console.log($('#year').val(res.result));
 		}, function(err){
 			console.log('there was an error year');
 			console.log(err);
@@ -87,8 +86,7 @@ var apiService = (function(){
 							
 	function getChineseSignMonth(year, month, day){
 		makeCall('findChineseSignOfMonth', day, month, year).then(function(res){
-			$('#month_sign').val(res.result)
-			console.log('succes');
+			$('#month').val(res.result)
 			}, function(err){
 				console.log('there was an error month');
 				console.log(err);
@@ -96,8 +94,6 @@ var apiService = (function(){
 	}
 
 	function getAstrologicalAllies(year, month, day){
-		console.log("found my friend");
-		alert('allies')
 		makeCall('findAstrologicalAllies', day, month, year).then(function(res){
 			$('#friend').val(res.result[0] + ", " + res.result[1]);
 			console.log(res.result + ", " + res.result[1]);
@@ -110,7 +106,6 @@ var apiService = (function(){
 	function getPeachBlossomAnimal(year, month, day){
 		makeCall('findPeachBlossomAnimal', day, month, year).then(function(res){
 			$('#peach').val(res.result.direction  + ", " + res.result.sign)
-			console.log('succes');
 			}, function(err){
 				console.log('there was an error peach');
 				console.log(err);
