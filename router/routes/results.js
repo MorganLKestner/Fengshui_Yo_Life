@@ -2,15 +2,21 @@ const express = require('express');
 const router = express.Router();
 const pgp = require('pg-promise')();
 const dbr = pgp('postgres://morgankestner@localhost:5432/fengshui_db');
+const pry = require('pryjs')
 
-
-router.get('/', function (req, res){
+router.get('/', function (req, res, next){
     var email = req.session.user.email;
     console.log('this is my user id '+ email)
-  	dbr.any("SELECT * FROM results WHERE user_id = $1",[email])
-    .then(function () {
+    dbr.any("SELECT * FROM results WHERE user_id = $1",[email])
+    .then(function (data) {
+        //eval(pry.it)
+        var result_data= {
+            "title": "Fengshui",
+            "results": data
+        };
     	console.log('get success');
-    	res.render('results');   
+    	res.render('results/results',result_data);   
+        // next();
         // success;
     })
     .catch(function (error) {
@@ -23,6 +29,10 @@ router.get('/', function (req, res){
 
 });
 
+
+// router.get('/results',function(req,res,next){
+//     res.send('success?')
+// })
 //req.session.user.id
 
 router.post('/', function (req, res){
@@ -32,7 +42,6 @@ router.post('/', function (req, res){
         [results.friend,results.year, results.month, results.peach, results.user_id])
     .then(function () {
         console.log('post happened on thebackend');
-        console.log([req.session.user]),
         console.log(results),
 
         res.redirect('results');
@@ -43,6 +52,8 @@ router.post('/', function (req, res){
         // error;
             console.log('our error is');
             console.log(error)
+            console.log(req.session.user.email)
+            console.log(results.user_idh)
          res.json({ error: error });   
 
     });
