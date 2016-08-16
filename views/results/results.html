@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
    <head>
+   	<link href="https://opensource.keycdn.com/fontawesome/4.6.3/font-awesome.min.css" rel="stylesheet">
     <link href="../css/style.css" rel="stylesheet" type="text/css">
     <link href="../css/materialize.min.css" rel="stylesheet" type="text/css">
     <script src="../js/jquery.js" type="text/javascript"></script>
@@ -12,24 +13,28 @@
       <div class="nav-wrapper indigo darken-1">
         <a href="#" class="brand-logo">Fengshui Yo' Life!</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
-          <li class="navlist">Welcome {{name}}!</li>
-          <liclass="navlist"><a href="/results">Saved Results</a></li>
+          <li class="navlist">Welcome {{email}}!</li>
+          <li class="navlist"><a href="/results">Saved Results</a></li>
           <li class="navlist"><a href="/faq">FAQ</a></li>
           <li class="navlist"> <a href="/sessions/logout">Logout</a></li>
         </ul>
       </div>
     </nav>
-	test
-{{#results}}
-
-{{year}}
-{{month}}
-{{friend}}
-{{peach}}
-
-
-{{/results}}
-    <button class="deleteuser" data-id={{}}>DELETE</button><br><br>
-
+    <div class="container">
+     <div class="row">
+     	<h1>Results</h1>
+     	<ul>
+     	{{#results}}
+     		<li>{{year}}</li>
+     		<li>{{month}}</li>
+     		<li>{{friend}}</li>
+     		<li>{{peach}}</li>
+     	<button class="deleteuser" data-id="{{id}}">
+     		<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+		</button>
+		{{/results}}
+     	</ul>
+     </div>
+    </div>
 </body>
 </html>

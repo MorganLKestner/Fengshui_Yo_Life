@@ -19,7 +19,13 @@ $(document).ready(function() {
 		apiService.getPeachBlossomAnimal(year,month,day);
 	}); // submit btn
 
-	$('#save_results').on('submit',function(e){
+	//on click for delete
+		//idtodelete =  $(this).attr('data_id')
+		//delete from results where id = idetodelete 
+
+
+	$('#save_btn').on('click',function(e){
+		debugger
 		e.preventDefault();
     	year = $('#year').val();
     	month = $('#month').val();
@@ -34,8 +40,10 @@ $(document).ready(function() {
 	      "method":"POST",
 	      "data": result,
 	      "success": function(data){
+	      	// debugger
 	        console.log('ajax save!!')
-	        console.log(data);
+	        // console.log(data);
+	        $('body').html(data)
 	    	},
 	    	"error": function(err){
 			console.log('error in save');
@@ -120,27 +128,5 @@ var apiService = (function(){
 
 })(); // apiService
 
-
-// var morganApi = (function(){
-// 	function _makeCall(searchObj){	
-// 		return $.ajax ({
-// 			type:'GET', 
-// 			url: 'http://localhost:3000/user/:id/results',
-// 			data: searchObj
-// 		});
-// 	}
-
-// 	function _search(){
-// 		_makeCall().then(function(searchRes){
-// 			console.log(searchRes)
-// 		}, function(err){
-// 			console.log('err');
-// 			console.log(err);
-// 		});
-// 	}
-// 	return {
-// 		search: _search	
-// 	}
-// })();
 
 

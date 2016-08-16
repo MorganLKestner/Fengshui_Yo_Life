@@ -9,13 +9,13 @@ router.get('/', function (req, res, next){
     console.log('this is my user id '+ email)
     dbr.any("SELECT * FROM results WHERE user_id = $1",[email])
     .then(function (data) {
-        //eval(pry.it)
-        var result_data= {
-            "title": "Fengshui",
+        var data = {
             "results": data
         };
-    	console.log('get success');
-    	res.render('results/results',result_data);   
+        console.log('get success');
+    	res.render('results/results', data);   
+        // eval(pry.it)
+        // res.send(data)
         // next();
         // success;
     })
@@ -30,19 +30,22 @@ router.get('/', function (req, res, next){
 });
 
 
-// router.get('/results',function(req,res,next){
+router.get('/results',function(req,res,next){
 //     res.send('success?')
-// })
+    res.render('view',data)
+})
 //req.session.user.id
 
 router.post('/', function (req, res){
     results = req.body
-    console.log('your user id is '+ req.session.user.email)
+    console.log('your user id is '+ req.session.user.email);
+    console.log('post before .then');
     dbr.none("INSERT INTO results (friend, year_sign, month_sign, peach, user_id) VALUES ($1,$2,$3,$4,$5)", 
         [results.friend,results.year, results.month, results.peach, results.user_id])
     .then(function () {
         console.log('post happened on thebackend');
-        console.log(results),
+        //console.log(results),
+        // console.log('your results id is '+ results);
 
         res.redirect('results');
   
