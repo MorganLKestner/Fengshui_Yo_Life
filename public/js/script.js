@@ -2,13 +2,13 @@
 // var url = 'https://fengshuiyolife.herokuapp.com/';
    
 // function callOtherDomain() {
-//   if(invocation) {    
+//   if(invocation) { 
+//   	console.log('callOtherDomain working')   
 //     invocation.open('GET', url, true);
 //     invocation.onreadystatechange = handler;
 //     invocation.send(); 
 //   }
 // }
-// callOtherDomain();
 
 
 
@@ -31,6 +31,7 @@ $(document).ready(function() {
 		apiService.getChineseSignMonth(year,month,day);
 		apiService.getAstrologicalAllies(year,month,day);
 		apiService.getPeachBlossomAnimal(year,month,day);
+		// callOtherDomain();
 	}); // submit btn
 
 	//on click for delete
@@ -99,15 +100,15 @@ var domService = (function(){
 
 var apiService = (function(){
 	console.log("apiService works")
-
-	var token = 'f737Ie15310mGZ7N2l61f2661eBF905c2NC51x86';
-	var apiID = '?token=f737Ie15310mGZ7N2l61f2661eBF905c2NC51x86';
+	var token ='4c69eEEd1dd4dmf192D152c94aj3dc5NO8Ad3y6T';
+	//var token = '8E4B59z5b657c26N485Rh9db9j2D321da271CM7d';
+	var apiID = '?token=8E4B59z5b657c26N485Rh9db9j2D321da271CM7d';
 	var apiBaseUrl ='https://fengshui-api.com/api/v1/';
 
 	function makeCall(functionName, day, month, year){
 		console.log("https://fengshui-api.com/api/v1/"+ functionName +"?token="+token+ "&year="+year+"&month="+month+"&day="+day);
 		return $.ajax ({
-			type:'GET', 
+			type:'GET',
 			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day
 		});
 	} 

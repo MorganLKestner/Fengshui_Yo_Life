@@ -70,16 +70,21 @@ nav .brand-logo {
 
 
 .fengshui-item {
-  color: #000;
+  color: black;
   text-align: center;
   font-size: 36px;
 }
 
 .styl_input {
-  color: #000;
+  color: black;
   text-align: center;
   font-size: 36px;
 
+}
+#save_btn {
+  font-size: 20px;
+  text-align: center;
+  color: black;
 }
 
 /* user login */
