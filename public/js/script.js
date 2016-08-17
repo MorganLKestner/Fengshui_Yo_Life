@@ -1,14 +1,14 @@
-var invocation = new XMLHttpRequest();
-var url = 'https://fengshuiyolife.herokuapp.com/';
+// var invocation = new XMLHttpRequest();
+// var url = 'https://fengshuiyolife.herokuapp.com/';
    
-function callOtherDomain() {
-  if(invocation) {    
-    invocation.open('GET', url, true);
-    invocation.onreadystatechange = handler;
-    invocation.send(); 
-  }
-}
-callOtherDomain();
+// function callOtherDomain() {
+//   if(invocation) {    
+//     invocation.open('GET', url, true);
+//     invocation.onreadystatechange = handler;
+//     invocation.send(); 
+//   }
+// }
+// callOtherDomain();
 
 
 
