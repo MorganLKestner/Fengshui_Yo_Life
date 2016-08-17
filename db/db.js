@@ -1,5 +1,6 @@
 const pgp = require('pg-promise')();
-const db = pgp('postgres://morgankestner@localhost:5432/fengshui_db');
+var psqldb = process.env.DATABASE_URL || 'postgres://morgankestner@localhost:5432/fengshui_db'
+const db = pgp(psqldb);
 
 const bcrypt = require('bcrypt');
 const salt = bcrypt.genSalt(10);

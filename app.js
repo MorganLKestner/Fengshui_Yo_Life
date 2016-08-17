@@ -21,12 +21,18 @@ app.use(session({
 
 app.use(flash());
 
-app.listen(3000, function () {
-  console.log('Need more input, Johnny Five Alive');
-});
+// app.listen(3000, function () {
+//   console.log('Need more input, Johnny Five Alive');
+// });
 
 app.use(function(err, req, res, next){
   res.status(err.status || 500);
 });
 
 const router = require('./router')(app);
+
+app.set('port', (process.env.PORT || 3000));
+
+app.listen(app.get('port'), function(){
+  console.log('Node app is running on port ', app.get('port'));
+});
