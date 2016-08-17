@@ -1,3 +1,17 @@
+var invocation = new XMLHttpRequest();
+var url = 'https://fengshuiyolife.herokuapp.com/';
+   
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+callOtherDomain();
+
+
+
 // doc ready file for jquery & js
 $(document).ready(function() {
 	console.log("doc ready loaded")
@@ -147,6 +161,8 @@ var apiService = (function(){
 	}
 
 })(); // apiService
+
+
 
 
 
