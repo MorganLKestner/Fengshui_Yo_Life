@@ -91,11 +91,11 @@ var apiService = (function(){
 	var apiBaseUrl ='https://fengshui-api.com/api/v1/';
 
 	function makeCall(functionName, day, month, year){
-		console.log("https://fengshui-api.com/api/v1/"+ functionName +"?token="+token+ "&year="+year+"&month="+month+"&day="+day);
+		console.log("https://fengshui-api.com/api/v1/"+ functionName +"?token="+token+ "&year="+year+"&month="+month+"&day="+day+"&callback=?");
 		return $.ajax ({
 			type:'GET', 
 			dataType:'JSONP',
-			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day
+			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day"&callback=?"
 		});
 	} 
 
