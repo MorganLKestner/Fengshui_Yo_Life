@@ -21,24 +21,29 @@
       </div>
     </nav>
     <div class="container">
-     <div class="row">
-     	<h1>Results</h1>
-     	<ul>
-     	{{#results}}
-     		<li>{{year}}</li>
-     		<li>{{month}}</li>
-     		<li>{{friend}}</li>
-     		<li>{{peach}}</li>
-     	<div id='btn_div'>
-     		<a href="results/delete/{{id}}" data-id="{{id}}">
-     			<i class="fa fa-minus-square-o" aria-hidden="true"></i>
-     		</a>
-	     	<!-- <button id="deletesearch" data-id="{{id}}">
-			</button> -->
-		</div>
-		{{/results}}
-     	</ul>
-     </div>
+    <h1>Horoscope List</h1>
+     <div class="row card ">
+      <div class="col s12 m5">
+        <div>
+          <span class="black-text"><ul>
+              {{#results}}
+                <li>{{year}}</li>
+                <li>{{month}}</li>
+                <li>{{friend}}</li>
+                <li>{{peach}}</li>
+              <div id='btn_div'>
+                <a href="results/delete/{{id}}" data-id="{{id}}">
+                  <i class="fa fa-minus-square-o" aria-hidden="true"></i>
+                </a>
+                <!-- <button id="deletesearch" data-id="{{id}}">
+              </button> -->
+            </div>
+            {{/results}}
+              </ul>
+          </span>
+        </div>
+      </div>
     </div>
+  </div>
 </body>
 </html>
