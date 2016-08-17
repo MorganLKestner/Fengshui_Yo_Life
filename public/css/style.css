@@ -15,8 +15,8 @@ nav .brand-logo {
 	padding-right: 20px;
 }
 .card-panel {
-	width: 200px;
-	height: 200px;
+	width: 250px;
+	height: 250px;
 }
 
 .row .col.m4 { 
@@ -31,7 +31,11 @@ nav .brand-logo {
 	width: 15%;
 }
 
+.styl_input {
+  font-size: 50px;
+  text-align: center;
 
+}
 
 .center-block { float: none }
 
@@ -66,11 +70,19 @@ nav .brand-logo {
 
 
 .fengshui-item {
-  color: #888;
+  color: #000;
   text-align: center;
+  font-size: 36px;
 }
 
-.fengshui-item i {
+.styl_input {
+  color: #000;
+  text-align: center;
+  font-size: 36px;
+
+}
+
+/*.fengshui-item i {
     font-size: 4em !important;
     color: #888 !important;
-  }
+  }*/

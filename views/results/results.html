@@ -11,7 +11,7 @@
 <body>
 	<nav>
       <div class="nav-wrapper indigo darken-1">
-        <a href="#" class="brand-logo">Fengshui Yo' Life!</a>
+        <a href="/" class="brand-logo">Fengshui Yo' Life!</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="navlist">Welcome {{email}}!</li>
           <li class="navlist"><a href="/results">Saved Results</a></li>
@@ -29,9 +29,13 @@
      		<li>{{month}}</li>
      		<li>{{friend}}</li>
      		<li>{{peach}}</li>
-     	<button class="deleteuser" data-id="{{id}}">
-     		<i class="fa fa-minus-square-o" aria-hidden="true"></i>
-		</button>
+     	<div id='btn_div'>
+     		<a href="results/delete/{{id}}" data-id="{{id}}">
+     			<i class="fa fa-minus-square-o" aria-hidden="true"></i>
+     		</a>
+	     	<!-- <button id="deletesearch" data-id="{{id}}">
+			</button> -->
+		</div>
 		{{/results}}
      	</ul>
      </div>

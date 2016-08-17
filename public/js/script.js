@@ -21,11 +21,28 @@ $(document).ready(function() {
 
 	//on click for delete
 		//idtodelete =  $(this).attr('data_id')
-		//delete from results where id = idetodelete 
+		//delete from results where id = idtodelete 
+	// $('#deletesearch').on('click', function(e){
+	// 	e.preventDefault();
+	// 	idtodelete =  $(this).attr('data_id');
+	// 	div = $(this).parent()
+ //    	$.ajax({
+	//       "url":"http://localhost:3000/results",
+	//       "method":"DELETE",
+	//       "success":function(){
+	//         $(div).remove();
+	//         console.log('delete ajax worked')
+	//     	},
+	//     	"error": function(err){
+	// 		console.log('error in delete');
+	// 		console.log(err);
+	// 		}
+ //    	});	
+	// });
 
 
 	$('#save_btn').on('click',function(e){
-		debugger
+		//debugger
 		e.preventDefault();
     	year = $('#year').val();
     	month = $('#month').val();

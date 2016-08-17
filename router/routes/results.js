@@ -12,7 +12,7 @@ router.get('/', function (req, res, next){
         var data = {
             "results": data
         };
-        console.log('get success');
+        console.log('get success results');
     	res.render('results/results', data);   
         // eval(pry.it)
         // res.send(data)
@@ -62,6 +62,38 @@ router.post('/', function (req, res){
     });
 
 });
+
+router.get('/delete/:id',function(req,res) {
+  id = req.params.id
+  dbr.none("DELETE FROM results WHERE id=$1",[id]).then(function(data){
+      console.log('delete done!!!!!')
+      res.redirect('/')
+    })
+      .catch(function (error) {
+        // error;
+            console.log(error)
+            console.log(id)
+            console.log('error in backend')
+         res.json({ error: error });  
+         }) 
+
+})
+
+// router.delete('/delete/:id',function(req,res){
+//   id = req.params.id
+//   dbr.none("DELETE FROM results WHERE id=$1",[id]).then(function(data){
+//       console.log('delete done!!!!!')
+//       res.render('results/results')
+//     })
+//       .catch(function (error) {
+//         // error;
+//             console.log(error)
+//             console.log(id)
+//             console.log('error in backend')
+//          res.json({ error: error });   
+
+//     });
+// })
 
 
 module.exports = router;

@@ -11,7 +11,7 @@
   <body>
     <nav>
       <div class="nav-wrapper indigo darken-1">
-        <a href="#" class="brand-logo">Fengshui Yo' Life!</a>
+        <a href="/" class="brand-logo">Fengshui Yo' Life!</a>
         <ul id="nav-mobile" class="right hide-on-med-and-down">
           <li class="navlist">Welcome {{email}}!</li>
           <li class="navlist"><a href="/results">Saved Results</a></li>
@@ -25,15 +25,15 @@
         <form class="col s12 push-s1">
           <div class="row">
             <div class="input-field col ">
-              <input id="day" class="validate" value="1">
+              <input placeholder="day" id="day" class="validate" value="day">
               <label for="day"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="month" id="month-input" value="1" class="validate">
+              <input placeholder="month" id="month-input" value="month" class="validate">
               <label for="month"></label>
             </div>
             <div class="input-field col ">
-              <input placeholder="year" id="year-input"  value="1985" class="validate">
+              <input placeholder="year" id="year-input"  value="year" class="validate">
               <label for="year"></label>
             </div>
             <div class="input-field col ">
@@ -45,35 +45,47 @@
       </div>
       <div id="results" class="container">
         <h1>Results<h1>
-        <form id='save_results'>
-          <div id='id_holder' data-id="{{email}}"></div>
-           <div class="row fengshui-item">
-              <h4>My Chinese Year Sign</h4>
-              <div id="year_wrapper">
-                <input name="year_sign" id="year" value="{{year}}">
+        <div class="row">
+        <form id='save_results' class="container">
+          <div  id='id_holder' data-id="{{email}}"></div>
+           <div class="row  fengshui-item ">
+            <div class="col l6 m5">
+              <div class="card-panel"id="year_wrapper">
+                <h4>My Chinese Year Sign</h4>
+                <input class="styl_input" disabled name="year_sign" id="year" value="{{year}}">
               </div>
-          </div>
-          <div class="row fengshui-item">
-              <h4>My Chinese Month Sign</h4>
-              <div id="month_wrapper">
-                <input name="month_sign" id="month" value="{{month}}">
-              </div>
-          </div>
-          <div class="row fengshui-item">
-            <h4>My Allies</h4>
-            <div id="friend_wrapper">
-              <input name="friend" id="friend" value="{{friend}}">
             </div>
           </div>
-            <div class="row fengshui-item">
-              <h4>My Peach Blossom Animal</h4>
-              <div id="peach_wrapper">
-                <input name="peach" id="peach" value="{{peach}}">
+          <div class="row fengshui-item ">
+            <div class="col l6 m5">
+              <div class="card-panel" id="month_wrapper">
+                <h4>My Chinese Month Sign</h4>
+                <input class="styl_input" disabled name="month_sign" id="month" value="{{month}}">
               </div>
+            </div>
           </div>
-          <button id="save_btn" type="submit"><a href="results">Save</button>
+          <div class="row fengshui-item ">
+            <div class="col l6 m5">
+              <div  class="card-panel" id="friend_wrapper">
+                <h4>My Allies</h4>
+                <input class="styl_input" disabled name="friend" id="friend" value="{{friend}}">
+              </div>
+            </div>
+          </div>
+            <div class="row fengshui-item ">
+              <div class="col l6 m5">
+                <div class="card-panel"id="peach_wrapper">
+                  <h4>My Peach Blossom Animal</h4>
+                  <input class="styl_input" disabled name="peach" id="peach" value="{{peach}}">
+                </div>
+            </div>
+          </div>
+          <div class="input-field">
+          <button class="btn waves-effect indigo" id="save_btn" name="action" type="button"><a href="results">Save</button>
+        </div>
         </form>
       </div>
+    </div> <!-- row div-->
     </div> <!-- container -->
   </body>
 </html>
