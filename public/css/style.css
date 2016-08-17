@@ -84,7 +84,9 @@ nav .brand-logo {
 
 /* user login */
 .newbg{
- background-image: url("http://goldengreatwallmapleglen.com/img/greatwallbg.jpg");
+    background-image: url("http://goldengreatwallmapleglen.com/img/greatwallbg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 
