@@ -95,7 +95,7 @@ var apiService = (function(){
 		return $.ajax ({
 			type:'GET', 
 			dataType:'JSONP',
-			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day"&callback=?"
+			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day+"&callback=?"
 		});
 	} 
 
