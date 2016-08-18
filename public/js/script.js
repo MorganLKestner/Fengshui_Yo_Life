@@ -28,9 +28,9 @@ $(document).ready(function() {
 		console.log('do we know day: ' + day+ " " + month + " "+ year)
 
 		apiService.getChineseSignYear(year, month, day);
-		apiService.getChineseSignMonth(year,month,day);
-		apiService.getAstrologicalAllies(year,month,day);
-		apiService.getPeachBlossomAnimal(year,month,day);
+		// apiService.getChineseSignMonth(year,month,day);
+		// apiService.getAstrologicalAllies(year,month,day);
+		// apiService.getPeachBlossomAnimal(year,month,day);
 		// callOtherDomain();
 	}); // submit btn
 
@@ -109,12 +109,15 @@ var apiService = (function(){
 		console.log("https://fengshui-api.com/api/v1/"+ functionName +"?token="+token+ "&year="+year+"&month="+month+"&day="+day);
 		return $.ajax ({
 			type:'GET',
-			url: 'https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day
+			dataType: 'json',
+			url: 'https://crossorigin.me/https://fengshui-api.com/api/v1/'+ functionName +'?token='+token+ '&year='+year+'&month='+month+'&day='+day
 		});
 	} 
 
 	function getChineseSignYear(year, month, day){
-			makeCall('findChineseSignOfMonth', day, month, year).then(function(res){
+			makeCall('findChineseSignOfYear', day, month, year).then(function(res){
+			console.log('here?');
+			console.log(res)
 			$('#year').val(res.result);
 			console.log($('#year').val(res.result));
 		}, function(err){
