@@ -28,9 +28,9 @@ $(document).ready(function() {
 		console.log('do we know day: ' + day+ " " + month + " "+ year)
 
 		apiService.getChineseSignYear(year, month, day);
-		// apiService.getChineseSignMonth(year,month,day);
-		// apiService.getAstrologicalAllies(year,month,day);
-		// apiService.getPeachBlossomAnimal(year,month,day);
+		 apiService.getChineseSignMonth(year,month,day);
+		 apiService.getAstrologicalAllies(year,month,day);
+		 apiService.getPeachBlossomAnimal(year,month,day);
 		// callOtherDomain();
 	}); // submit btn
 
