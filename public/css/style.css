@@ -39,6 +39,9 @@ nav .brand-logo {
 
 .center-block { float: none }
 
+#save_results {
+  display: inline-flex;
+}
 
   /* label color */
 .input-field label {
